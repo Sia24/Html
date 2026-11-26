@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light">
+  <title>Tech Center Connect — Novembre 2026</title>
+  <style>
+    :root{--axa:#00008f;--blue:#1746a2;--sky:#eaf1ff;--ink:#17233c;--muted:#64718a;--line:#e5eaf2;--paper:#f4f6fa;--white:#fff;--gold:#f3bd45}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--paper);font-family:Arial,Helvetica,sans-serif;color:var(--ink);line-height:1.6}
+    a{color:var(--blue)}
+    .page{max-width:900px;margin:32px auto;background:#fff;box-shadow:0 12px 40px rgba(20,40,80,.10);overflow:hidden;border-radius:16px}
+    .topline{height:8px;background:linear-gradient(90deg,var(--axa),#2874d0,#70b7e8)}
+    .masthead{padding:34px 48px 38px;background:var(--axa);color:#fff;position:relative;overflow:hidden}
+    .masthead:after{content:"";position:absolute;width:280px;height:280px;border:1px solid rgba(255,255,255,.18);border-radius:50%;right:-70px;top:-130px;box-shadow:0 0 0 28px rgba(255,255,255,.04),0 0 0 58px rgba(255,255,255,.035)}
+    .brand{font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:700;opacity:.88}
+    h1{font-size:clamp(34px,6vw,54px);line-height:1.02;letter-spacing:-1.8px;margin:18px 0 12px;font-weight:800}
+    .subtitle{font-size:16px;color:#dce7ff;margin:0;max-width:540px}
+    .edition{display:inline-block;margin-top:24px;padding:7px 12px;border:1px solid rgba(255,255,255,.35);border-radius:30px;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:#fff}
+    .intro{padding:28px 48px 12px;font-size:16px;color:#45516a}
+    .intro strong{color:var(--ink)}
+    .section{padding:26px 48px}
+    .section-head{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+    .num{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:10px;background:var(--sky);color:var(--blue);font-weight:800;font-size:13px;flex:none}
+    .eyebrow{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--blue);font-weight:800;margin:0 0 3px}
+    h2{font-size:24px;line-height:1.2;margin:0;color:var(--ink);letter-spacing:-.4px}
+    h3{margin:0 0 8px;font-size:17px;line-height:1.3;color:var(--ink)}
+    p{margin:0 0 12px}
+    .editorial{display:grid;grid-template-columns:190px 1fr;gap:28px;align-items:start;background:#f8faff;border:1px solid #e7eefb;border-radius:14px;padding:24px}
+    .portrait{height:210px;border-radius:12px;background:linear-gradient(145deg,#dce7fa,#f1f5fc);border:1px dashed #9fb4d9;display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;color:#47618d;font-size:13px;font-weight:700}
+    .person{font-weight:800;margin-top:12px;color:var(--ink)}
+    .role{font-size:12px;color:var(--muted);margin-top:2px}
+    .editorial-copy{font-size:14px;color:#4b5870}
+    .editorial-copy .lead{font-size:18px;line-height:1.4;color:var(--ink);font-weight:700;margin-bottom:14px}
+    .signature{font-weight:700;color:var(--blue);margin-top:16px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{border:1px solid var(--line);border-radius:13px;overflow:hidden;background:#fff}
+    .card-art{height:112px;background:linear-gradient(135deg,#eaf1ff,#d9e6fb);display:flex;align-items:center;justify-content:center;font-size:34px}
+    .card-body{padding:17px}
+    .card-kicker{font-size:10px;letter-spacing:1.2px;color:var(--blue);font-weight:800;text-transform:uppercase;margin-bottom:7px}
+    .card p{font-size:13px;color:#59667c;margin:0}
+    .team{background:#f7f9fd;border-radius:14px;padding:22px;border:1px solid var(--line)}
+    .team-hero{height:220px;border-radius:10px;background:linear-gradient(135deg,#dce8f7,#eef3fb);border:1px dashed #9fb4d9;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;color:#47618d;font-weight:700;margin-bottom:18px}
+    .photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+    .photo-slot{height:100px;border-radius:9px;background:#eaf0fa;border:1px dashed #a9bad6;display:flex;align-items:center;justify-content:center;color:#65799d;font-size:12px;text-align:center;padding:8px}
+    .dudos{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .dudo{display:flex;gap:12px;align-items:flex-start;padding:16px;border:1px solid var(--line);border-radius:12px;background:#fff}
+    .dudo-icon{font-size:22px;line-height:1.2}
+    .dudo p{font-size:13px;color:#59667c;margin:0}
+    .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .info-box{padding:19px;border-radius:12px;background:#f7f9fd;border:1px solid var(--line)}
+    .info-box p,.info-box li{font-size:13px;color:#59667c}
+    ul{padding-left:18px;margin:8px 0 0}
+    .cta{margin:18px 48px 34px;padding:26px 30px;border-radius:14px;background:var(--axa);color:#fff;display:flex;justify-content:space-between;align-items:center;gap:24px}
+    .cta .eyebrow{color:#b9d4ff}
+    .cta h2{color:#fff;font-size:22px;margin-bottom:7px}
+    .cta p{color:#e0e8ff;font-size:13px;margin:0;max-width:530px}
+    .cta-link{display:inline-block;white-space:nowrap;padding:11px 16px;border-radius:8px;background:#fff;color:var(--axa);text-decoration:none;font-size:12px;font-weight:800}
+    .footer{background:#f1f4f9;padding:22px 48px;color:#65718a;font-size:11px;text-align:center}
+    .footer strong{color:#33415d}
+    .placeholder-note{font-size:11px;color:#7a879d;margin-top:8px}
+    @media(max-width:680px){.page{margin:0;border-radius:0}.masthead,.intro,.section{padding-left:22px;padding-right:22px}.editorial{grid-template-columns:1fr}.portrait{height:170px}.cards{grid-template-columns:1fr}.card{display:grid;grid-template-columns:105px 1fr}.card-art{height:100%;min-height:130px}.dudos,.info-grid{grid-template-columns:1fr}.cta{margin:8px 22px 24px;display:block}.cta-link{margin-top:16px}.footer{padding:20px 22px}.photo-grid{grid-template-columns:repeat(3,1fr)}.team-hero{height:170px}}
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="topline"></div>
+    <header class="masthead">
+      <div class="brand">AXA France × AGBS Maroc</div>
+      <h1>TECH CENTER<br>CONNECT</h1>
+      <p class="subtitle">Les actualités, les initiatives et les personnes qui font vivre notre communauté.</p>
+      <span class="edition">Novembre 2026 · Édition n°01</span>
+    </header>
+
+    <div class="intro">
+      <p><strong>Bonjour à toutes et à tous,</strong></p>
+      <p>Bienvenue dans cette première édition de <strong>Tech Center Connect</strong>, votre rendez-vous mensuel pour découvrir les actualités, les initiatives, les réussites et les moments qui font vivre notre communauté.</p>
+    </div>
+
+    <section class="section" id="edito">
+      <div class="section-head"><span class="num">01</span><div><p class="eyebrow">Le mot du mois</p><h2>Un mois de célébrations, de rencontres et de nouvelles énergies !</h2></div></div>
+      <div class="editorial">
+        <div>
+          <!-- Remplacer ce bloc par la photo réelle du sponsor. -->
+          <div class="portrait">PHOTO DU SPONSOR<br>À INSÉRER</div>
+          <div class="person">[Prénom NOM]</div>
+          <div class="role">[Fonction · Entité]</div>
+        </div>
+        <div class="editorial-copy">
+          <p class="lead">Quel beau mois de novembre au Tech Center !</p>
+          <p>Ces dernières semaines ont été rythmées par de belles rencontres, des moments de célébration et surtout beaucoup de partage et de convivialité.</p>
+          <p>Nous avons célébré ensemble l'anniversaire de notre Tech Center, accueilli Christophe à l'occasion de sa visite et franchi une nouvelle étape avec la sélection et la formation de notre équipe d'ambassadeurs, qui contribuera à faire rayonner notre communauté.</p>
+          <p>Et parce que les meilleurs souvenirs se créent aussi en dehors du bureau, nous avons partagé une belle journée de Team Building à Benslimane, entre rires, activités et moments de complicité.</p>
+          <p>Derrière chacun de ces moments, il y a surtout ce qui nous rassemble : une équipe, une énergie collective et des personnes qui font vivre notre Tech Center au quotidien.</p>
+          <p class="signature">Merci à toutes et à tous pour votre engagement et votre enthousiasme. Bonne lecture !</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="actualites">
+      <div class="section-head"><span class="num">02</span><div><p class="eyebrow">Les temps forts</p><h2>Ce qui a marqué notre mois</h2></div></div>
+      <div class="cards">
+        <article class="card"><div class="card-art" aria-hidden="true">🎂</div><div class="card-body"><div class="card-kicker">Célébration</div><h3>L'anniversaire du Tech Center</h3><p>Un moment spécial pour célébrer notre parcours, nos réalisations et surtout les collaborateurs qui contribuent chaque jour à faire grandir notre Tech Center.</p></div></article>
+        <article class="card"><div class="card-art" aria-hidden="true">🤝</div><div class="card-body"><div class="card-kicker">Rencontre</div><h3>La visite de Christophe</h3><p>Nous avons eu le plaisir d'accueillir Christophe au sein de notre Tech Center. Une belle occasion de partager nos actualités, nos réalisations et nos ambitions.</p></div></article>
+        <article class="card"><div class="card-art" aria-hidden="true">🌟</div><div class="card-body"><div class="card-kicker">Communauté</div><h3>La communauté des ambassadeurs</h3><p>Une équipe d'ambassadeurs a été sélectionnée et formée pour représenter le Tech Center, renforcer les liens et faire vivre notre communauté.</p></div></article>
+      </div>
+    </section>
+
+    <section class="section" id="team-building">
+      <div class="section-head"><span class="num">03</span><div><p class="eyebrow">La vie du Tech Center</p><h2>Team Building à Benslimane : place à la convivialité !</h2></div></div>
+      <div class="team">
+        <!-- Remplacer ce bloc par une grande photo réelle du team building. -->
+        <div class="team-hero">PHOTO PRINCIPALE DU TEAM BUILDING À BENSIMANE</div>
+        <p>Parce que la cohésion d'équipe se construit aussi en dehors du bureau, nos collaborateurs se sont retrouvés à Benslimane pour une journée placée sous le signe du partage et de la bonne humeur.</p>
+        <p>Au programme : des activités, des échanges, des rires et surtout de beaux moments passés ensemble. Une belle parenthèse pour renforcer les liens, apprendre à se connaître autrement et repartir avec de nouveaux souvenirs !</p>
+        <div class="photo-grid"><div class="photo-slot">Photo 2</div><div class="photo-slot">Photo 3</div><div class="photo-slot">Photo 4</div></div>
+        <p class="placeholder-note">Remplacer les emplacements par vos photos réelles de la journée.</p>
+      </div>
+    </section>
+
+    <section class="section" id="dudos">
+      <div class="section-head"><span class="num">04</span><div><p class="eyebrow">Reconnaissance</p><h2>Les Dudos du mois</h2></div></div>
+      <p style="color:#59667c;font-size:14px;margin-bottom:16px">Parce que chaque contribution mérite d'être célébrée ! Ce mois-ci, nous souhaitons remercier celles et ceux qui ont contribué à faire de novembre un mois aussi riche.</p>
+      <div class="dudos">
+        <div class="dudo"><div class="dudo-icon">👏</div><div><h3>Aux équipes organisatrices</h3><p>Merci pour leur engagement et leur contribution à la célébration de l'anniversaire du Tech Center.</p></div></div>
+        <div class="dudo"><div class="dudo-icon">🙌</div><div><h3>Aux équipes mobilisées pour la visite</h3><p>Merci à toutes les personnes qui ont contribué à la préparation et à l'accueil de Christophe.</p></div></div>
+        <div class="dudo"><div class="dudo-icon">🌟</div><div><h3>À nos nouveaux ambassadeurs</h3><p>Félicitations pour cette nouvelle mission et votre engagement au service de notre communauté.</p></div></div>
+        <div class="dudo"><div class="dudo-icon">💙</div><div><h3>Aux organisateurs du Team Building</h3><p>Un grand merci pour cette journée de convivialité et les beaux souvenirs partagés à Benslimane.</p></div></div>
+      </div>
+    </section>
+
+    <section class="section" id="participer">
+      <div class="section-head"><span class="num">05</span><div><p class="eyebrow">Comprendre & participer</p><h2>Le Tech Center expliqué</h2></div></div>
+      <div class="info-grid">
+        <div class="info-box"><h3>Notre fonctionnement, nos équipes, nos expertises</h3><p>Le Tech Center, c'est avant tout une communauté qui rassemble des compétences, des expertises et des collaborateurs autour d'une ambition commune.</p><p><strong>[À compléter]</strong> Présentez ici une équipe, une expertise, un processus ou un sujet du modèle opérationnel, avec un lien vers SharePoint ou Confluence si disponible.</p></div>
+        <div class="info-box"><h3>Les prochains rendez-vous</h3><ul><li>[Date] — [Événement à venir]</li><li>[Date] — [Événement à venir]</li><li>[Date] — [Événement à venir]</li></ul><p style="margin-top:12px"><strong>Le saviez-vous ?</strong><br>[Partagez une anecdote, une astuce ou une information utile sur le Tech Center.]</p></div>
+      </div>
+    </section>
+
+    <section class="cta" id="contribution">
+      <div><p class="eyebrow">La newsletter est aussi la vôtre</p><h2>À vous de jouer !</h2><p>Une réussite, une belle initiative, un projet inspirant ou un collaborateur à mettre en lumière ? Partagez vos idées et vos actualités pour contribuer à la prochaine édition.</p></div>
+      <a class="cta-link" href="[LIEN_FORMULAIRE]">Proposer une contribution →</a>
+    </section>
+
+    <footer class="footer">
+      <p><strong>Tech Center Connect · AXA France × AGBS Maroc</strong></p>
+      <p>Retrouvez les éditions précédentes et les archives sur <a href="[LIEN_SHAREPOINT]">SharePoint</a>.</p>
+      <p>Merci à toutes les équipes et à tous les contributeurs qui font vivre notre communauté.</p>
+      <p><strong>L'équipe Communication – Tech Center</strong></p>
+      <p>Diffusion interne AXA — Ne pas transférer à l'externe.</p>
+    </footer>
+  </main>
+</body>
+</html>
